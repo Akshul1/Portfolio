@@ -1,11 +1,7 @@
 'use strict';
 
-
-
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
-
-
 
 // sidebar variables
 const sidebar = document.querySelector("[data-sidebar]");
@@ -13,46 +9,6 @@ const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
 // sidebar toggle functionality for mobile
 sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
-
-
-
-// testimonials variables
-const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
-const modalContainer = document.querySelector("[data-modal-container]");
-const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
-const overlay = document.querySelector("[data-overlay]");
-
-// modal variable
-const modalImg = document.querySelector("[data-modal-img]");
-const modalTitle = document.querySelector("[data-modal-title]");
-const modalText = document.querySelector("[data-modal-text]");
-
-// modal toggle function
-const testimonialsModalFunc = function () {
-  modalContainer.classList.toggle("active");
-  overlay.classList.toggle("active");
-}
-
-// add click event to all modal items
-for (let i = 0; i < testimonialsItem.length; i++) {
-
-  testimonialsItem[i].addEventListener("click", function () {
-
-    modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
-    modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
-    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
-
-    testimonialsModalFunc();
-
-  });
-
-}
-
-// add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
-
 
 
 // custom select variables
@@ -113,8 +69,6 @@ for (let i = 0; i < filterBtn.length; i++) {
 
 }
 
-
-
 // contact form variables
 const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
@@ -133,7 +87,6 @@ for (let i = 0; i < formInputs.length; i++) {
 
   });
 }
-
 
 
 // page navigation variables
@@ -157,3 +110,47 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+// ============================================
+// PDF VIEWER ERROR HANDLING (New Feature)
+// ============================================
+
+window.addEventListener('DOMContentLoaded', function() {
+    const pdfViewer = document.getElementById('pdfViewer');
+    const pdfPlaceholder = document.getElementById('pdfPlaceholder');
+    const downloadBtn = document.getElementById('downloadBtn');
+
+    if (pdfViewer && pdfPlaceholder) {
+        
+        // Function to show the error state
+        const showPdfError = () => {
+            pdfViewer.style.display = 'none';
+            pdfPlaceholder.style.display = 'flex';
+            if (downloadBtn) {
+                // Dim and disable the download button if the source failed
+                downloadBtn.style.opacity = '0.7';
+                downloadBtn.style.pointerEvents = 'none';
+            }
+        };
+
+        // Event listener for a direct error (unreliable, but included)
+        pdfViewer.addEventListener('error', showPdfError);
+        
+        // Fallback check after a short delay (more reliable for local files)
+        setTimeout(() => {
+            // Check if the PDF viewer is still visible and its content is inaccessible/empty
+            // This is necessary because 'error' event is often blocked by browser security (CORS)
+            if (pdfViewer.style.display !== 'none') {
+                try {
+                    // Check if the iframe content is not accessible (e.g., failed to load)
+                    if (pdfViewer.contentDocument === null || pdfViewer.contentDocument.body.children.length === 0) {
+                        throw new Error('PDF content inaccessible or empty.');
+                    }
+                } catch (e) {
+                    // If access throws an error (CORS) or content is empty, show the placeholder
+                    showPdfError();
+                }
+            }
+        }, 1500); // 1.5 second delay
+    }
+});
