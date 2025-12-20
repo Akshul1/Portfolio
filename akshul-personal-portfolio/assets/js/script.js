@@ -125,7 +125,7 @@ window.addEventListener('DOMContentLoaded', function() {
         // Function to show the error state
         const showPdfError = () => {
             pdfViewer.style.display = 'none';
-            pdfPlaceholder.style.display = 'flex';
+            pdfPlaceholder.style.display = '';
             if (downloadBtn) {
                 // Dim and disable the download button if the source failed
                 downloadBtn.style.opacity = '0.7';

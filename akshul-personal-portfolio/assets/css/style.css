@@ -605,35 +605,65 @@ main {
 
 /* --- Optimized PDF Viewer --- */
 
+/* --- Optimized PDF Viewer (No Internal Scrollbar) --- */
+
 .pdf-viewer-wrapper {
-    width: 100%;
-    max-width: 850px;
-    /* Use 'vh' (view height) so it scales with the browser window size */
-    height: 80vh; 
-    min-height: 500px; /* Prevents it from getting too small */
-    max-height: 1100px; /* Prevents it from getting too long on giant screens */
+    width: 90%;
+    max-width: 700px;
+    /* Maintain A4 aspect ratio (1:1.414) */
+    aspect-ratio: 1 / 1.414;
+    height: auto;
     border: 2px solid var(--jet);
     border-radius: 16px;
-    overflow: hidden; 
+    overflow: hidden !important;
     box-shadow: var(--shadow-2);
-    margin-bottom: 30px;
+    margin: 0 auto 30px auto;
     display: flex;
     justify-content: center;
-    background: var(--onyx); /* Dark background while loading */
+    align-items: center;
+    background: var(--onyx);
+    position: relative;
 }
 
 .pdf-viewer {
     width: 100%;
     height: 100%;
     border: none;
-    /* This helps modern browsers treat the iframe content properly */
     display: block;
+    overflow: hidden !important;
+    -webkit-overflow-scrolling: touch;
 }
 
-/* Specific fix for half-screen or small laptops */
-@media (max-height: 800px) {
+/* Force hide any scrollbars */
+.pdf-viewer::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+.pdf-viewer-wrapper::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
     .pdf-viewer-wrapper {
-        height: 70vh;
+        width: 95%;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .pdf-viewer-wrapper {
+        width: 85%;
+        max-width: 650px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .pdf-viewer-wrapper {
+        width: 80%;
+        max-width: 700px;
     }
 }
 
