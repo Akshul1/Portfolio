@@ -121,7 +121,7 @@
             <button class="navbar-link" data-nav-link>Resume</button>
           </li>
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
+            <button class="navbar-link" data-nav-link>Projects</button>
           </li>
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Contact</button>
@@ -281,171 +281,95 @@
       </article>
 
       <!-- PORTFOLIO -->
-      <article class="portfolio" data-page="portfolio">
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
+     <article class="portfolio" data-page="portfolio">
 
-        <section class="projects">
-          <ul class="filter-list">
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>Web design</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>Applications</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>Web development</button>
-            </li>
-          </ul>
+  <header>
+    <h2 class="h2 article-title">Projects</h2>
+  </header>
 
-          <div class="filter-select-box">
-            <button class="filter-select" data-select>
-              <div class="select-value" data-selecct-value>Select category</div>
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-            </button>
+  <section class="projects">
 
-            <ul class="select-list">
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-              <li class="select-item">
-                <button data-select-item>Web design</button>
-              </li>
-              <li class="select-item">
-                <button data-select-item>Applications</button>
-              </li>
-              <li class="select-item">
-                <button data-select-item>Web development</button>
-              </li>
-            </ul>
-          </div>
+    <ul class="filter-list">
+      <li class="filter-item"><button class="active" data-filter-btn>All</button></li>
+      <li class="filter-item"><button data-filter-btn>Backend Development</button></li>
+      <li class="filter-item"><button data-filter-btn>Computer Vision</button></li>
+      <li class="filter-item"><button data-filter-btn>Web Development</button></li>
+    </ul>
 
-          <ul class="project-list">
-            <li class="project-item active" data-filter-item data-category="web development">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
-                </figure>
-                <h3 class="project-title">Finance</h3>
-                <p class="project-category">Web development</p>
-              </a>
-            </li>
+    <div class="filter-select-box">
+      <button class="filter-select" data-select>
+        <div class="select-value" data-selecct-value>Select category</div>
+        <div class="select-icon"><ion-icon name="chevron-down"></ion-icon></div>
+      </button>
+      <ul class="select-list">
+        <li class="select-item"><button data-select-item>All</button></li>
+        <li class="select-item"><button data-select-item>Backend Development</button></li>
+        <li class="select-item"><button data-select-item>Computer Vision</button></li>
+        <li class="select-item"><button data-select-item>Web Development</button></li>
+      </ul>
+    </div>
 
-            <li class="project-item active" data-filter-item data-category="web development">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
-                </figure>
-                <h3 class="project-title">Orizon</h3>
-                <p class="project-category">Web development</p>
-              </a>
-            </li>
+    <ul class="project-list">
 
-            <li class="project-item active" data-filter-item data-category="web design">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
-                </figure>
-                <h3 class="project-title">Fundo</h3>
-                <p class="project-category">Web design</p>
-              </a>
-            </li>
+      <li class="project-item active" data-filter-item data-category="backend development">
+        <a href="https://github.com/Akshul1/movie-reservation-system" target="_blank">
+          <figure class="project-img">
+            <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+            <img src="./assets/images/project-1.jpg" alt="Movie Reservation System" loading="lazy">
+          </figure>
+          <h3 class="project-title">Movie Reservation System</h3>
+          <p class="project-category">Backend (Spring Boot, Security, JWT)</p>
+        </a>
+      </li>
 
-            <li class="project-item active" data-filter-item data-category="applications">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
-                </figure>
-                <h3 class="project-title">Brawlhalla</h3>
-                <p class="project-category">Applications</p>
-              </a>
-            </li>
+      <li class="project-item active" data-filter-item data-category="backend development">
+        <a href="https://github.com/Akshul1/TrainApp-Backend" target="_blank">
+          <figure class="project-img">
+            <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+            <img src="./assets/images/project-4.png" alt="TrainApp Backend" loading="lazy">
+          </figure>
+          <h3 class="project-title">Train Ticketing Backend</h3>
+          <p class="project-category">Backend (Java, Spring Boot, REST API)</p>
+        </a>
+      </li>
 
-            <li class="project-item active" data-filter-item data-category="web design">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
-                </figure>
-                <h3 class="project-title">DSM.</h3>
-                <p class="project-category">Web design</p>
-              </a>
-            </li>
+      <li class="project-item active" data-filter-item data-category="backend development">
+        <a href="https://github.com/Akshul1/Restaurant-ordering-system" target="_blank">
+          <figure class="project-img">
+            <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+            <img src="./assets/images/project-8.jpg" alt="Restaurant Ordering System" loading="lazy">
+          </figure>
+          <h3 class="project-title">Restaurant Management System</h3>
+          <p class="project-category">Backend (Spring Boot, MySQL)</p>
+        </a>
+      </li>
 
-            <li class="project-item active" data-filter-item data-category="web design">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
-                </figure>
-                <h3 class="project-title">MetaSpark</h3>
-                <p class="project-category">Web design</p>
-              </a>
-            </li>
+      <li class="project-item active" data-filter-item data-category="computer vision">
+        <a href="https://github.com/Akshul1/CubeBreaker" target="_blank">
+          <figure class="project-img">
+            <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+            <img src="./assets/images/project-2.png" alt="Cube-Breaker OpenCV" loading="lazy">
+          </figure>
+          <h3 class="project-title">Cube-Breaker Solver</h3>
+          <p class="project-category">Computer Vision (Java & OpenCV)</p>
+        </a>
+      </li>
 
-            <li class="project-item active" data-filter-item data-category="web development">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
-                </figure>
-                <h3 class="project-title">Summary</h3>
-                <p class="project-category">Web development</p>
-              </a>
-            </li>
+      <li class="project-item active" data-filter-item data-category="web development">
+        <a href="https://github.com/Akshul1/Portfolio">
+          <figure class="project-img">
+            <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+            <img src="./assets/images/project-3.jpg" alt="Personal Portfolio" loading="lazy">
+          </figure>
+          <h3 class="project-title">Professional Portfolio</h3>
+          <p class="project-category">Web Development (HTML, CSS, JS)</p>
+        </a>
+      </li>
 
-            <li class="project-item active" data-filter-item data-category="applications">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
-                </figure>
-                <h3 class="project-title">Task Manager</h3>
-                <p class="project-category">Applications</p>
-              </a>
-            </li>
+    </ul>
+  </section>
 
-            <li class="project-item active" data-filter-item data-category="web development">
-              <a href="#">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
-                </figure>
-                <h3 class="project-title">Arrival</h3>
-                <p class="project-category">Web development</p>
-              </a>
-            </li>
-          </ul>
-        </section>
-      </article>
+</article>
 
       <!-- CONTACT -->
       <article class="contact" data-page="contact">
